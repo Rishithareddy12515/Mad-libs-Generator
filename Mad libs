@@ -4,6 +4,7 @@ print("Welcome to Mad Libs! Please provide the following words:\n")
 
 # Getting inputs from the user
 name = input("Enter a name: ")
+pronoun = input("Enter a pronoun for that person (he/she/they): ")
 adjective1 = input("Enter an adjective: ")
 adjective2 = input("Enter another adjective: ")
 animal = input("Enter an animal: ")
@@ -12,12 +13,23 @@ verb_past = input("Enter a past tense verb: ")
 emotion = input("Enter an emotion: ")
 food = input("Enter a type of food: ")
 
+# Adjust possessive and object forms
+if pronoun.lower() == "he":
+    poss_pronoun = "his"
+    obj_pronoun = "him"
+elif pronoun.lower() == "she":
+    poss_pronoun = "her"
+    obj_pronoun = "her"
+else:
+    poss_pronoun = "their"
+    obj_pronoun = "them"
+
 # Mad Libs story
 story = f"""
-One day, {name} was walking through the {adjective1} forest when they saw a {adjective2} {animal}.
-It was unlike anything {name} had ever seen before! Curious, they followed it all the way to {place}.
-Suddenly, the {animal} turned around and {verb_past} right in front of them!
-{name} felt so {emotion} that they dropped their {food} and ran away laughing.
+One day, {name} was walking through the {adjective1} forest when {pronoun} saw a {adjective2} {animal}.
+It was unlike anything {name} had ever seen before! Curious, {pronoun} followed it all the way to {place}.
+Suddenly, the {animal} turned around and {verb_past} right in front of {obj_pronoun}!
+{name} felt so {emotion} that {pronoun} dropped {poss_pronoun} {food} and ran away laughing.
 It was the best adventure ever!
 """
 
